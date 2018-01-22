@@ -1,0 +1,6 @@
+.idea/
+P37.iml
+target/
+.project
+.settings/
+/KafkaAvroGenerator/src/main/java/isban/gcb/p37/dto
