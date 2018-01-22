@@ -14,12 +14,12 @@ import java.util.Properties;
 
 public class KStreamsJob {
 
-    public static void init() {
+    public static void init(String topicName) {
 
         KStreamBuilder builder = new KStreamBuilder();
 
         KStream<String, Empleado> dealMessageStream = builder.stream(new Serdes.StringSerde(),
-                getSerdeEmpleado(), "empleado");
+                getSerdeEmpleado(), topicName);
 
         dealMessageStream.print();
 
