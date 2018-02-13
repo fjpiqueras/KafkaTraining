@@ -25,7 +25,7 @@ public class KafkaRandomGeneratorSchemaRegistry {
 
         for (int i = 0; i < numMensajes; i++) {
 
-            Future<RecordMetadata> metadata = enviaEmpleadoTopico("empleado", empleadoRandom.generaEmpleadoRandom(), producer);
+            Future<RecordMetadata> metadata = enviaEmpleadoTopico("empleadoEjercicio7", empleadoRandom.generaEmpleadoRandom(), producer);
 
             RecordMetadata m = metadata.get();
 

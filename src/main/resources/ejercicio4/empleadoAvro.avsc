@@ -5,6 +5,12 @@
 	"doc": "Empleado schema",
 	"aliases": [],
 	"fields": [
+	    {
+            "name": "dni",
+            "type": ["string", "null"],
+            "doc": "Nombre del empleado",
+            "aliases": []
+        },
 		{
 			"name": "nombre",
 			"type": ["string", "null"],
@@ -31,8 +37,11 @@
         },
         {
             "name": "skills",
-            "type": ["string", "null"],
-            "doc": "Lista de skills separadas por coma",
+            "type": [ "null", {
+                "type": "array",
+                "items": "string"
+            }],
+            "doc": "Results",
             "aliases": []
         }
 	]

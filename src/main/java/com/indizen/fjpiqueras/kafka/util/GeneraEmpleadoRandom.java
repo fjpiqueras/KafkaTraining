@@ -18,6 +18,7 @@ public class GeneraEmpleadoRandom {
 
         Empleado empleado = new Empleado();
 
+        empleado.setDni(String.valueOf(new Random().nextInt()));
         empleado.setNombre(getNombreRandom());
         empleado.setApellidos(getApellidoRandom());
         empleado.setEmail(new Random().nextInt() + "@realmadrid.com");

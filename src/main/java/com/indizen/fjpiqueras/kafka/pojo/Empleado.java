@@ -26,6 +26,10 @@ public class Empleado implements Serializable {
         this.skills = skills;
     }
 
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
     public String getDni() {
         return dni;
     }
