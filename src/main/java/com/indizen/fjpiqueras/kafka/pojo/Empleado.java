@@ -30,10 +30,6 @@ public class Empleado implements Serializable {
         return dni;
     }
 
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -72,10 +68,6 @@ public class Empleado implements Serializable {
 
     public void setSkills(List<String> skills) {
         this.skills = skills;
-    }
-
-    public boolean isEstrella() {
-        return estrella;
     }
 
     public void setEstrella(boolean estrella) {

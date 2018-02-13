@@ -16,11 +16,11 @@ import java.util.logging.Logger;
 
 public class KafkaRandomGenerator {
 
-    final static Logger logger = Logger.getLogger(KafkaRandomGenerator.class.getName());
+    private final static Logger logger = Logger.getLogger(KafkaRandomGenerator.class.getName());
 
     public static void init(int numMensajes) throws ExecutionException, InterruptedException {
 
-        KafkaProducer<String, Empleado> producer = new KafkaProducer<String, Empleado>(getKafkaProps());
+        KafkaProducer<String, Empleado> producer = new KafkaProducer<>(getKafkaProps());
         GeneraEmpleadoRandom empleadoRandom = new GeneraEmpleadoRandom();
 
         for (int i = 0; i < numMensajes; i++) {
@@ -33,7 +33,7 @@ public class KafkaRandomGenerator {
         }
     }
 
-    public static Properties getKafkaProps() {
+    private static Properties getKafkaProps() {
         Properties kafkaProps = new Properties();
 
         kafkaProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
@@ -43,7 +43,7 @@ public class KafkaRandomGenerator {
         return kafkaProps;
     }
 
-    public static Future<RecordMetadata> enviaEmpleadoTopico(String nombreTopico, Empleado empleado, KafkaProducer<String, Empleado> producer) {
+    private static Future<RecordMetadata> enviaEmpleadoTopico(String nombreTopico, Empleado empleado, KafkaProducer<String, Empleado> producer) {
 
         return producer.send(new ProducerRecord(nombreTopico, "key", empleado));
     }

@@ -4,7 +4,6 @@ import com.indizen.fjpiqueras.kafka.ejercicio5_y_6.streamjob.KStreamsJob;
 
 public class KafkaStreamsApplication {
 
-    //Recibe un argumento, nombre del tópico al que enviará los mensajes
     public static void main(String[] args) throws Exception {
 
         if(args.length==1) {

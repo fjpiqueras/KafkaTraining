@@ -15,8 +15,8 @@ public class EmpleadoSerializer implements Serializer<Empleado> {
 
     public byte[] serialize(String topic, Empleado obj) {
         byte[] bytes = null;
-        ByteArrayOutputStream bos = null;
-        ObjectOutputStream oos = null;
+        ByteArrayOutputStream bos;
+        ObjectOutputStream oos;
         try {
             bos = new ByteArrayOutputStream();
             oos = new ObjectOutputStream(bos);

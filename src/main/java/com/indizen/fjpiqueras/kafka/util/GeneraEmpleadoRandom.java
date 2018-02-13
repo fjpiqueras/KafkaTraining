@@ -23,7 +23,7 @@ public class GeneraEmpleadoRandom {
     }
 
     private String getNombreRandom() {
-        List<String> nombres = new ArrayList<String>();
+        List<String> nombres = new ArrayList<>();
 
         nombres.add("Ronaldo");
         nombres.add("Karim");
@@ -41,7 +41,7 @@ public class GeneraEmpleadoRandom {
     }
 
     private String getApellidoRandom() {
-        List<String> nombres = new ArrayList<String>();
+        List<String> nombres = new ArrayList<>();
 
         nombres.add("Nazario");
         nombres.add("Benzemal");
@@ -55,7 +55,7 @@ public class GeneraEmpleadoRandom {
     }
 
     private List<String> getSkill(int numSkills) {
-        List<String> skills = new ArrayList<String>();
+        List<String> skills = new ArrayList<>();
 
         skills.add("Goleador");
         skills.add("Corte");
@@ -65,7 +65,7 @@ public class GeneraEmpleadoRandom {
         skills.add("Olfato");
         skills.add("Técnica");
 
-        List<String> skillsJugador = new ArrayList<String>();
+        List<String> skillsJugador = new ArrayList<>();
 
         for (int i = 0; i<numSkills; i++){
             skillsJugador.add(skills.get(getRandomInt(skills)));
