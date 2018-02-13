@@ -1,4 +1,4 @@
-package com.indizen.fjpiqueras.kafka.generator;
+package com.indizen.fjpiqueras.kafka.ejercicio3.generator;
 
 import com.indizen.fjpiqueras.kafka.pojo.Empleado;
 import com.indizen.fjpiqueras.kafka.serde.EmpleadoSerializer;

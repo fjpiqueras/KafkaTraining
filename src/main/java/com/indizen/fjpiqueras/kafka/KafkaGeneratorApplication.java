@@ -1,6 +1,6 @@
 package com.indizen.fjpiqueras.kafka;
 
-import com.indizen.fjpiqueras.kafka.generator.KafkaRandomGenerator;
+import com.indizen.fjpiqueras.kafka.ejercicio3.generator.KafkaRandomGenerator;
 
 import java.util.logging.Logger;
 
