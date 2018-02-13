@@ -10,30 +10,6 @@
 			"type": ["string", "null"],
 			"doc": "Nombre del empleado",
 			"aliases": []
-		},
-		{
-			"name": "apellidos",
-			"type": ["string", "null"],
-			"doc": "Apellidos del empleado",
-			"aliases": []
-		},
-		{
-            "name": "email",
-            "type": ["string", "null"],
-            "doc": "Nombre del empleado",
-            "aliases": []
-        },
-        {
-            "name": "telefono",
-            "type": ["int", "null"],
-            "doc": "Numero de telefono",
-            "aliases": []
-        },
-        {
-            "name": "skills",
-            "type": ["string", "null"],
-            "doc": "Lista de skills separadas por coma",
-            "aliases": []
-        }
+		}
 	]
 }
