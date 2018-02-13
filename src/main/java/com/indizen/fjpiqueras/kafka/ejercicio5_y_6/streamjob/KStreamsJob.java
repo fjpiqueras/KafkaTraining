@@ -1,14 +1,17 @@
-package com.indizen.fjpiqueras.kafka.streamjob;
+package com.indizen.fjpiqueras.kafka.ejercicio5_y_6.streamjob;
 
+import com.indizen.fjpiqueras.kafka.ejercicio5_y_6.filter.FilterPredicate;
+import com.indizen.fjpiqueras.kafka.ejercicio5_y_6.map.EmpleadoMapper;
 import com.indizen.fjpiqueras.kafka.pojo.Empleado;
-import com.indizen.fjpiqueras.kafka.serde.EmpleadoDeserializer;
-import com.indizen.fjpiqueras.kafka.serde.EmpleadoSerializer;
+import com.indizen.fjpiqueras.kafka.ejercicio5_y_6.serde.EmpleadoDeserializer;
+import com.indizen.fjpiqueras.kafka.ejercicio5_y_6.serde.EmpleadoSerializer;
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.KStream;
 import org.apache.kafka.streams.kstream.KStreamBuilder;
+import org.apache.kafka.streams.kstream.Predicate;
 
 import java.util.Properties;
 
@@ -20,6 +23,9 @@ public class KStreamsJob {
 
         KStream<String, Empleado> dealMessageStream = builder.stream(new Serdes.StringSerde(),
                 getSerdeEmpleado(), topicName);
+
+        dealMessageStream.filter(new FilterPredicate());
+        dealMessageStream.map(new EmpleadoMapper());
 
         dealMessageStream.print();
 

@@ -1,25 +1,37 @@
 package com.indizen.fjpiqueras.kafka.pojo;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Empleado implements Serializable {
 
+    private String dni;
     private String nombre;
     private String apellidos;
     private String email;
     private int telefono;
-    private String skills;
+    private List<String> skills;
+    private boolean estrella;
 
     public Empleado() {
 
     }
 
-    public Empleado(String nombre, String apellidos, String email, int telefono, String skills) {
+    public Empleado(String dni, String nombre, String apellidos, String email, int telefono, List<String> skills) {
+        this.dni = dni;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.email = email;
         this.telefono = telefono;
         this.skills = skills;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
     public String getNombre() {
@@ -54,22 +66,32 @@ public class Empleado implements Serializable {
         this.telefono = telefono;
     }
 
-    public String getSkills() {
+    public List<String> getSkills() {
         return skills;
     }
 
-    public void setSkills(String skills) {
+    public void setSkills(List<String> skills) {
         this.skills = skills;
+    }
+
+    public boolean isEstrella() {
+        return estrella;
+    }
+
+    public void setEstrella(boolean estrella) {
+        this.estrella = estrella;
     }
 
     @Override
     public String toString() {
         return "Empleado{" +
-                "nombre='" + nombre + '\'' +
+                "dni='" + dni + '\'' +
+                ", nombre='" + nombre + '\'' +
                 ", apellidos='" + apellidos + '\'' +
                 ", email='" + email + '\'' +
                 ", telefono=" + telefono +
                 ", skills='" + skills + '\'' +
+                ", estrella=" + estrella +
                 '}';
     }
 }

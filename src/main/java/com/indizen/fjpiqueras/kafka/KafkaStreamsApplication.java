@@ -1,6 +1,6 @@
 package com.indizen.fjpiqueras.kafka;
 
-import com.indizen.fjpiqueras.kafka.streamjob.KStreamsJob;
+import com.indizen.fjpiqueras.kafka.ejercicio5_y_6.streamjob.KStreamsJob;
 
 public class KafkaStreamsApplication {
 

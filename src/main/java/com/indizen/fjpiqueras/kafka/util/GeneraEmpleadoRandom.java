@@ -5,9 +5,9 @@ import com.indizen.fjpiqueras.kafka.pojo.Empleado;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class GeneraEmpleadoRandom {
-
 
     public Empleado generaEmpleadoRandom() {
 
@@ -17,7 +17,7 @@ public class GeneraEmpleadoRandom {
         empleado.setApellidos(getApellidoRandom());
         empleado.setEmail(new Random().nextInt() + "@realmadrid.com");
         empleado.setTelefono(new Random().nextInt());
-        empleado.setSkills(getSkill());
+        empleado.setSkills(getSkill(ThreadLocalRandom.current().nextInt(0, 5)));
 
         return empleado;
     }
@@ -54,17 +54,24 @@ public class GeneraEmpleadoRandom {
         return nombres.get(getRandomInt(nombres));
     }
 
-    private String getSkill() {
+    private List<String> getSkill(int numSkills) {
         List<String> skills = new ArrayList<String>();
 
         skills.add("Goleador");
         skills.add("Corte");
         skills.add("Visión de juego");
-        skills.add("nada");
-        skills.add("fotogénico");
+        skills.add("Cono");
+        skills.add("Fotogénico");
         skills.add("Olfato");
         skills.add("Técnica");
 
-        return skills.get(getRandomInt(skills));
+        List<String> skillsJugador = new ArrayList<String>();
+
+        for (int i = 0; i<numSkills; i++){
+            skillsJugador.add(skills.get(getRandomInt(skills)));
+        }
+
+
+        return skillsJugador;
     }
 }

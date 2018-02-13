@@ -1,4 +1,4 @@
-package com.indizen.fjpiqueras.kafka.serde;
+package com.indizen.fjpiqueras.kafka.ejercicio5_y_6.serde;
 
 import com.indizen.fjpiqueras.kafka.pojo.Empleado;
 import org.apache.kafka.common.serialization.Serializer;

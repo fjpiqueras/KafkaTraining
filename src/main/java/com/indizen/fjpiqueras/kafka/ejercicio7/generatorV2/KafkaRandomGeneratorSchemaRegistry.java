@@ -1,7 +1,7 @@
-package com.indizen.fjpiqueras.kafka.ejercicio3.generator;
+package com.indizen.fjpiqueras.kafka.ejercicio7.generatorV2;
 
-import com.indizen.fjpiqueras.kafka.pojo.Empleado;
 import com.indizen.fjpiqueras.kafka.ejercicio5_y_6.serde.EmpleadoSerializer;
+import com.indizen.fjpiqueras.kafka.pojo.Empleado;
 import com.indizen.fjpiqueras.kafka.util.GeneraEmpleadoRandom;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -14,9 +14,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.logging.Logger;
 
-public class KafkaRandomGenerator {
+public class KafkaRandomGeneratorSchemaRegistry {
 
-    final static Logger logger = Logger.getLogger(KafkaRandomGenerator.class.getName());
+    final static Logger logger = Logger.getLogger(KafkaRandomGeneratorSchemaRegistry.class.getName());
 
     public static void init(int numMensajes) throws ExecutionException, InterruptedException {
 
@@ -39,6 +39,7 @@ public class KafkaRandomGenerator {
         kafkaProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         kafkaProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
         kafkaProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, new EmpleadoSerializer().getClass().getName());
+        kafkaProps.put("schema.registry.url", "localhost:8081");
 
         return kafkaProps;
     }
