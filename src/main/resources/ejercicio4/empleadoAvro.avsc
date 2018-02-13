@@ -1,0 +1,15 @@
+{
+	"namespace": "com.indizen.fjpiqueras.kafka.ejercicio4.avro",
+	"name": "Empleado",
+	"type": "record",
+	"doc": "Empleado schema",
+	"aliases": [],
+	"fields": [
+		{
+			"name": "nombre",
+			"type": ["string", "null"],
+			"doc": "Nombre del empleado",
+			"aliases": []
+		}
+	]
+}

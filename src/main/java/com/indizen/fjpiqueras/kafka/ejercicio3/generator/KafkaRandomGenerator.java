@@ -1,11 +1,8 @@
-package com.indizen.fjpiqueras.kafka.generator;
+package com.indizen.fjpiqueras.kafka.ejercicio3.generator;
 
 import com.indizen.fjpiqueras.kafka.pojo.Empleado;
-import com.indizen.fjpiqueras.kafka.serde.EmpleadoSerializer;
 import com.indizen.fjpiqueras.kafka.util.GeneraEmpleadoRandom;
 import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 
 import java.util.Date;
