@@ -30,6 +30,7 @@ public class KafkaRandomGenerator {
             RecordMetadata m = metadata.get();
 
             logger.info("Empleado: " + i + " - " + m.topic() + " - " + m.offset() + " - " + m.partition() + " - " + new Date(m.timestamp()));
+
         }
     }
 

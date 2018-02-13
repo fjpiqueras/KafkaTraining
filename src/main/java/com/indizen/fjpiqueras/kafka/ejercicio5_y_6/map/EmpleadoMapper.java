@@ -12,7 +12,8 @@ public class EmpleadoMapper implements KeyValueMapper<String, Empleado, KeyValue
                 empleado.getEmail(), empleado.getApellidos(),
                 empleado.getTelefono(), empleado.getSkills());
 
-        if (empleado.getSkills().size() > 2) empleadoNuevo.setEstrella(true);
+        if (empleado.getSkills().size() > 2)
+            empleadoNuevo.setEstrella(true);
 
         return new KeyValue<>(s, empleadoNuevo);
     }

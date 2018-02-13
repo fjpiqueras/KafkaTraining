@@ -21,10 +21,7 @@ public class KStreamsJob {
         KStreamBuilder builder = new KStreamBuilder();
 
         KStream<String, Empleado> dealMessageStream = builder.stream(new Serdes.StringSerde(),
-                getSerdeEmpleado(), topicName);
-
-        dealMessageStream.filter(new FilterPredicate());
-        dealMessageStream.map(new EmpleadoMapper());
+                getSerdeEmpleado(), topicName).filter(new FilterPredicate()).map(new EmpleadoMapper());
 
         dealMessageStream.print();
 

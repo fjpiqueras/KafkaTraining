@@ -1,13 +1,18 @@
 package com.indizen.fjpiqueras.kafka.util;
 
+import com.indizen.fjpiqueras.kafka.ejercicio3.generator.KafkaRandomGenerator;
 import com.indizen.fjpiqueras.kafka.pojo.Empleado;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.logging.Logger;
 
 public class GeneraEmpleadoRandom {
+
+    private final static Logger logger = Logger.getLogger(GeneraEmpleadoRandom.class.getName());
+
 
     public Empleado generaEmpleadoRandom() {
 
@@ -17,7 +22,9 @@ public class GeneraEmpleadoRandom {
         empleado.setApellidos(getApellidoRandom());
         empleado.setEmail(new Random().nextInt() + "@realmadrid.com");
         empleado.setTelefono(new Random().nextInt());
-        empleado.setSkills(getSkill(ThreadLocalRandom.current().nextInt(0, 5)));
+        empleado.setSkills(getSkill(ThreadLocalRandom.current().nextInt(1, 6)));
+
+        logger.info(empleado.toString());
 
         return empleado;
     }

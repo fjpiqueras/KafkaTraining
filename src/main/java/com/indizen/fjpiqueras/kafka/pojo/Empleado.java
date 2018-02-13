@@ -82,7 +82,7 @@ public class Empleado implements Serializable {
                 ", apellidos='" + apellidos + '\'' +
                 ", email='" + email + '\'' +
                 ", telefono=" + telefono +
-                ", skills='" + skills + '\'' +
+                ", skills='" + skills.toString() + '\'' +
                 ", estrella=" + estrella +
                 '}';
     }
