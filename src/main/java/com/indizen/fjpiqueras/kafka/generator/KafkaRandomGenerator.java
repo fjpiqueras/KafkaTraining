@@ -23,7 +23,6 @@ public class KafkaRandomGenerator {
         KafkaProducer<String, Empleado> producer = new KafkaProducer<String, Empleado>(getKafkaProps());
         GeneraEmpleadoRandom empleadoRandom = new GeneraEmpleadoRandom();
 
-
         for (int i = 0; i < numMensajes; i++) {
 
             Future<RecordMetadata> metadata = enviaEmpleadoTopico("empleado", empleadoRandom.generaEmpleadoRandom(), producer);
@@ -35,18 +34,13 @@ public class KafkaRandomGenerator {
     }
 
     public static Properties getKafkaProps() {
-        Properties kafkaProps = new Properties();
 
-        kafkaProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
-        kafkaProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
-        kafkaProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, new EmpleadoSerializer().getClass().getName());
-        kafkaProps.put("schema.registry.url", "localhost:8081");
-
-        return kafkaProps;
+        return new Properties();
     }
 
     public static Future<RecordMetadata> enviaEmpleadoTopico(String nombreTopico, Empleado empleado, KafkaProducer<String, Empleado> producer) {
 
-        return producer.send(new ProducerRecord(nombreTopico, "key", empleado));
+        //TODO envía el mensaje usando el objeto producer.
+        return null;
     }
 }
