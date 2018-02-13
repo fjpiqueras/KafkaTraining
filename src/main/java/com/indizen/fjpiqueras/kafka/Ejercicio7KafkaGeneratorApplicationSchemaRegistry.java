@@ -5,7 +5,7 @@ import com.indizen.fjpiqueras.kafka.ejercicio7.generatorV2.KafkaRandomGeneratorS
 
 import java.util.logging.Logger;
 
-public class KafkaGeneratorApplicationSchemaRegistry {
+public class Ejercicio7KafkaGeneratorApplicationSchemaRegistry {
 
     public static void main(String[] args) throws Exception {
 
