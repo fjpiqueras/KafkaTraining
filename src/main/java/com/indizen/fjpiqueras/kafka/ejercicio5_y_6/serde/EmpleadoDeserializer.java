@@ -14,18 +14,9 @@ public class EmpleadoDeserializer implements Deserializer<Empleado> {
     }
 
     public Empleado deserialize(String topic, byte[] data) {
-        Object obj = null;
-        ByteArrayInputStream bis;
-        ObjectInputStream ois;
-        try {
-            bis = new ByteArrayInputStream(data);
-            ois = new ObjectInputStream(bis);
-            obj = ois.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
 
-        return (Empleado) obj;
+        //TODO Implementa el deserializador de Empleado
+        return null;
     }
 
     public void close() {

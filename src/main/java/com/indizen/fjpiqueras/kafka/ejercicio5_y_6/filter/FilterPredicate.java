@@ -11,7 +11,8 @@ public class FilterPredicate implements Predicate<String, Empleado> {
 
     @Override
     public boolean test(String s, Empleado empleado) {
-        return !(empleado.getNombre().equals("Karim") && empleado.getApellidos().equals("Benzema"));
+        //TODO filtra aquellos empleados que se llamen Karim Benzema
+        return false;
     }
 }
 

@@ -1,11 +1,8 @@
 package com.indizen.fjpiqueras.kafka.ejercicio3.generator;
 
 import com.indizen.fjpiqueras.kafka.pojo.Empleado;
-import com.indizen.fjpiqueras.kafka.ejercicio5_y_6.serde.EmpleadoSerializer;
 import com.indizen.fjpiqueras.kafka.util.GeneraEmpleadoRandom;
 import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 
 import java.util.Date;
@@ -36,15 +33,13 @@ public class KafkaRandomGenerator {
     private static Properties getKafkaProps() {
         Properties kafkaProps = new Properties();
 
-        kafkaProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
-        kafkaProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
-        kafkaProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, new EmpleadoSerializer().getClass().getName());
-
+        //TODO Añade la configuración de Kafka
         return kafkaProps;
     }
 
     private static Future<RecordMetadata> enviaEmpleadoTopico(String topicName, Empleado empleado, KafkaProducer<String, Empleado> producer) {
 
-        return producer.send(new ProducerRecord(topicName, "key", empleado));
+        //TODO utiliza el producer para enviar el mensaje al tópico.
+        return null;
     }
 }

@@ -11,7 +11,8 @@ public class FilterPredicateGenericRecord implements Predicate<String, GenericRe
 
     @Override
     public boolean test(String s, GenericRecord record) {
-        return !(record.get("nombre").equals("Karim") && record.get("apellidos").equals("Benzema"));
+        //TODO filtra aquellos empleados que se llamen Karim Benzema
+        return false;
     }
 }
 

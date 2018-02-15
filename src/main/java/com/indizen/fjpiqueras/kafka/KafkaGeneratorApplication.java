@@ -2,8 +2,6 @@ package com.indizen.fjpiqueras.kafka;
 
 import com.indizen.fjpiqueras.kafka.ejercicio3.generator.KafkaRandomGenerator;
 
-import java.util.logging.Logger;
-
 public class KafkaGeneratorApplication {
 
     public static void main(String[] args) throws Exception {

@@ -8,13 +8,8 @@ public class EmpleadoMapper implements KeyValueMapper<String, Empleado, KeyValue
 
     @Override
     public KeyValue<String, Empleado> apply(String s, Empleado empleado) {
-        Empleado empleadoNuevo = new Empleado(empleado.getDni(), empleado.getNombre(),
-                empleado.getApellidos(), empleado.getEmail(),
-                empleado.getTelefono(), empleado.getSkills());
 
-        if (empleado.getSkills().size() > 2)
-            empleadoNuevo.setEstrella(true);
-
-        return new KeyValue<>(s, empleadoNuevo);
+        //TODO Calcula si un empleado es una estrella. (Estrella si tiene más de 2 skills)
+        return null;
     }
 }

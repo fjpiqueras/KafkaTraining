@@ -6,9 +6,9 @@ public class KafkaStreamsApplication {
 
     public static void main(String[] args) throws Exception {
 
-        if(args.length==1) {
+        if (args.length == 1) {
             KStreamsJob.init(args[0]);
-        } else{
+        } else {
             throw new Exception("La applicación recibe un argumento: nombre del tópico");
         }
     }

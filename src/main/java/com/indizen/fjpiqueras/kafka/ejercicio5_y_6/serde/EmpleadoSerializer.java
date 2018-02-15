@@ -14,20 +14,9 @@ public class EmpleadoSerializer implements Serializer<Empleado> {
     }
 
     public byte[] serialize(String topic, Empleado obj) {
-        byte[] bytes = null;
-        ByteArrayOutputStream bos;
-        ObjectOutputStream oos;
-        try {
-            bos = new ByteArrayOutputStream();
-            oos = new ObjectOutputStream(bos);
-            oos.writeObject(obj);
-            oos.flush();
-            bytes = bos.toByteArray();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-        return bytes;
+        //TODO implementa el serializador de Empleado
+        return null;
     }
 
     public void close() {

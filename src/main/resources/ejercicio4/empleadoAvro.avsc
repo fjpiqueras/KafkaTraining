@@ -10,45 +10,6 @@
             "type": ["string", "null"],
             "doc": "Nombre del empleado",
             "aliases": []
-        },
-		{
-			"name": "nombre",
-			"type": ["string", "null"],
-			"doc": "Nombre del empleado",
-			"aliases": []
-		},
-		{
-			"name": "apellidos",
-			"type": ["string", "null"],
-			"doc": "Apellidos del empleado",
-			"aliases": []
-		},
-		{
-            "name": "email",
-            "type": ["string", "null"],
-            "doc": "Nombre del empleado",
-            "aliases": []
-        },
-        {
-            "name": "telefono",
-            "type": ["int", "null"],
-            "doc": "Numero de telefono",
-            "aliases": []
-        },
-        {
-            "name": "skills",
-            "type": [ "null", {
-                "type": "array",
-                "items": "string"
-            }],
-            "doc": "Results",
-            "aliases": []
-        },
-        {
-           "name": "estrella",
-           "type": ["boolean", "null"],
-           "doc": "Boolean si es una estrella",
-           "aliases": []
         }
 	]
 }

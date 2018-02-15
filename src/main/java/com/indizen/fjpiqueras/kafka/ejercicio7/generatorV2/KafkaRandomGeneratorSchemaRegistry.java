@@ -1,11 +1,8 @@
 package com.indizen.fjpiqueras.kafka.ejercicio7.generatorV2;
 
 import com.indizen.fjpiqueras.kafka.util.GeneraEmpleadoRandom;
-import io.confluent.kafka.streams.serdes.avro.GenericAvroSerializer;
 import org.apache.avro.generic.GenericRecord;
 import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 
 import java.util.Date;
@@ -36,16 +33,12 @@ public class KafkaRandomGeneratorSchemaRegistry {
     private static Properties getKafkaProps() {
         Properties kafkaProps = new Properties();
 
-        kafkaProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "http://127.0.0.1:9092");
-        kafkaProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
-        kafkaProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, GenericAvroSerializer.class);
-        kafkaProps.put("schema.registry.url", "http://127.0.0.1:8081");
-
+        //TODO Añade la configuración de Kafka
         return kafkaProps;
     }
 
     private static Future<RecordMetadata> enviaEmpleadoTopico(String nombreTopico, GenericRecord record, KafkaProducer<String, GenericRecord> producer) {
-
-        return producer.send(new ProducerRecord(nombreTopico, "key", record));
+        //TODO utiliza el producer para enviar el mensaje al tópico.
+        return null;
     }
 }
