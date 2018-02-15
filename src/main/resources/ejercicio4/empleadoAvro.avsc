@@ -43,6 +43,12 @@
             }],
             "doc": "Results",
             "aliases": []
+        },
+        {
+           "name": "estrella",
+           "type": ["boolean", "null"],
+           "doc": "Boolean si es una estrella",
+           "aliases": []
         }
 	]
 }

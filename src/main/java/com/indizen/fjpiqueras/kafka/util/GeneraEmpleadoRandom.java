@@ -2,6 +2,9 @@ package com.indizen.fjpiqueras.kafka.util;
 
 import com.indizen.fjpiqueras.kafka.ejercicio3.generator.KafkaRandomGenerator;
 import com.indizen.fjpiqueras.kafka.pojo.Empleado;
+import org.apache.avro.Schema;
+import org.apache.avro.generic.GenericData;
+import org.apache.avro.generic.GenericRecord;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +16,24 @@ public class GeneraEmpleadoRandom {
 
     private final static Logger logger = Logger.getLogger(GeneraEmpleadoRandom.class.getName());
 
+
+    public GenericRecord generaEmpleadoRandomAvro() {
+
+        Schema dealMessageSchema = SchemaFactory.getSchemaRegistrySchema("http://127.0.0.1:8081","empleadoSchemaRegistry-value");
+        GenericRecord empleado = new GenericData.Record(dealMessageSchema);
+
+        empleado.put("dni", String.valueOf(new Random().nextInt()));
+        empleado.put("nombre", getNombreRandom());
+        empleado.put("apellidos", getApellidoRandom());
+        empleado.put("email", new Random().nextInt() + "@realmadrid.com");
+        empleado.put("telefono", new Random().nextInt());
+        empleado.put("skills", getSkill(ThreadLocalRandom.current().nextInt(1, 6)));
+        empleado.put("estrella", false);
+
+        logger.info(empleado.toString());
+
+        return empleado;
+    }
 
     public Empleado generaEmpleadoRandom() {
 

@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 /** Empleado schema */
 @org.apache.avro.specific.AvroGenerated
 public class Empleado extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -5359131384687240504L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Empleado\",\"namespace\":\"com.indizen.fjpiqueras.kafka.ejercicio4.avro\",\"doc\":\"Empleado schema\",\"fields\":[{\"name\":\"dni\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"],\"doc\":\"Nombre del empleado\"},{\"name\":\"nombre\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"],\"doc\":\"Nombre del empleado\"},{\"name\":\"apellidos\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"],\"doc\":\"Apellidos del empleado\"},{\"name\":\"email\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"],\"doc\":\"Nombre del empleado\"},{\"name\":\"telefono\",\"type\":[\"int\",\"null\"],\"doc\":\"Numero de telefono\"},{\"name\":\"skills\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"Results\"}]}");
+  private static final long serialVersionUID = 7684598672659689606L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Empleado\",\"namespace\":\"com.indizen.fjpiqueras.kafka.ejercicio4.avro\",\"doc\":\"Empleado schema\",\"fields\":[{\"name\":\"dni\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"],\"doc\":\"Nombre del empleado\"},{\"name\":\"nombre\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"],\"doc\":\"Nombre del empleado\"},{\"name\":\"apellidos\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"],\"doc\":\"Apellidos del empleado\"},{\"name\":\"email\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"],\"doc\":\"Nombre del empleado\"},{\"name\":\"telefono\",\"type\":[\"int\",\"null\"],\"doc\":\"Numero de telefono\"},{\"name\":\"skills\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"doc\":\"Results\"},{\"name\":\"estrella\",\"type\":[\"boolean\",\"null\"],\"doc\":\"Boolean si es una estrella\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -64,6 +64,8 @@ public class Empleado extends org.apache.avro.specific.SpecificRecordBase implem
   @Deprecated public java.lang.Integer telefono;
   /** Results */
   @Deprecated public java.util.List<java.lang.String> skills;
+  /** Boolean si es una estrella */
+  @Deprecated public java.lang.Boolean estrella;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -80,14 +82,16 @@ public class Empleado extends org.apache.avro.specific.SpecificRecordBase implem
    * @param email Nombre del empleado
    * @param telefono Numero de telefono
    * @param skills Results
+   * @param estrella Boolean si es una estrella
    */
-  public Empleado(java.lang.String dni, java.lang.String nombre, java.lang.String apellidos, java.lang.String email, java.lang.Integer telefono, java.util.List<java.lang.String> skills) {
+  public Empleado(java.lang.String dni, java.lang.String nombre, java.lang.String apellidos, java.lang.String email, java.lang.Integer telefono, java.util.List<java.lang.String> skills, java.lang.Boolean estrella) {
     this.dni = dni;
     this.nombre = nombre;
     this.apellidos = apellidos;
     this.email = email;
     this.telefono = telefono;
     this.skills = skills;
+    this.estrella = estrella;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -100,6 +104,7 @@ public class Empleado extends org.apache.avro.specific.SpecificRecordBase implem
     case 3: return email;
     case 4: return telefono;
     case 5: return skills;
+    case 6: return estrella;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -114,6 +119,7 @@ public class Empleado extends org.apache.avro.specific.SpecificRecordBase implem
     case 3: email = (java.lang.String)value$; break;
     case 4: telefono = (java.lang.Integer)value$; break;
     case 5: skills = (java.util.List<java.lang.String>)value$; break;
+    case 6: estrella = (java.lang.Boolean)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -221,6 +227,23 @@ public class Empleado extends org.apache.avro.specific.SpecificRecordBase implem
   }
 
   /**
+   * Gets the value of the 'estrella' field.
+   * @return Boolean si es una estrella
+   */
+  public java.lang.Boolean getEstrella() {
+    return estrella;
+  }
+
+  /**
+   * Sets the value of the 'estrella' field.
+   * Boolean si es una estrella
+   * @param value the value to set.
+   */
+  public void setEstrella(java.lang.Boolean value) {
+    this.estrella = value;
+  }
+
+  /**
    * Creates a new Empleado RecordBuilder.
    * @return A new Empleado RecordBuilder
    */
@@ -264,6 +287,8 @@ public class Empleado extends org.apache.avro.specific.SpecificRecordBase implem
     private java.lang.Integer telefono;
     /** Results */
     private java.util.List<java.lang.String> skills;
+    /** Boolean si es una estrella */
+    private java.lang.Boolean estrella;
 
     /** Creates a new Builder */
     private Builder() {
@@ -300,6 +325,10 @@ public class Empleado extends org.apache.avro.specific.SpecificRecordBase implem
         this.skills = data().deepCopy(fields()[5].schema(), other.skills);
         fieldSetFlags()[5] = true;
       }
+      if (isValidValue(fields()[6], other.estrella)) {
+        this.estrella = data().deepCopy(fields()[6].schema(), other.estrella);
+        fieldSetFlags()[6] = true;
+      }
     }
 
     /**
@@ -331,6 +360,10 @@ public class Empleado extends org.apache.avro.specific.SpecificRecordBase implem
       if (isValidValue(fields()[5], other.skills)) {
         this.skills = data().deepCopy(fields()[5].schema(), other.skills);
         fieldSetFlags()[5] = true;
+      }
+      if (isValidValue(fields()[6], other.estrella)) {
+        this.estrella = data().deepCopy(fields()[6].schema(), other.estrella);
+        fieldSetFlags()[6] = true;
       }
     }
 
@@ -592,6 +625,49 @@ public class Empleado extends org.apache.avro.specific.SpecificRecordBase implem
       return this;
     }
 
+    /**
+      * Gets the value of the 'estrella' field.
+      * Boolean si es una estrella
+      * @return The value.
+      */
+    public java.lang.Boolean getEstrella() {
+      return estrella;
+    }
+
+    /**
+      * Sets the value of the 'estrella' field.
+      * Boolean si es una estrella
+      * @param value The value of 'estrella'.
+      * @return This builder.
+      */
+    public com.indizen.fjpiqueras.kafka.ejercicio4.avro.Empleado.Builder setEstrella(java.lang.Boolean value) {
+      validate(fields()[6], value);
+      this.estrella = value;
+      fieldSetFlags()[6] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'estrella' field has been set.
+      * Boolean si es una estrella
+      * @return True if the 'estrella' field has been set, false otherwise.
+      */
+    public boolean hasEstrella() {
+      return fieldSetFlags()[6];
+    }
+
+
+    /**
+      * Clears the value of the 'estrella' field.
+      * Boolean si es una estrella
+      * @return This builder.
+      */
+    public com.indizen.fjpiqueras.kafka.ejercicio4.avro.Empleado.Builder clearEstrella() {
+      estrella = null;
+      fieldSetFlags()[6] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public Empleado build() {
@@ -603,6 +679,7 @@ public class Empleado extends org.apache.avro.specific.SpecificRecordBase implem
         record.email = fieldSetFlags()[3] ? this.email : (java.lang.String) defaultValue(fields()[3]);
         record.telefono = fieldSetFlags()[4] ? this.telefono : (java.lang.Integer) defaultValue(fields()[4]);
         record.skills = fieldSetFlags()[5] ? this.skills : (java.util.List<java.lang.String>) defaultValue(fields()[5]);
+        record.estrella = fieldSetFlags()[6] ? this.estrella : (java.lang.Boolean) defaultValue(fields()[6]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
