@@ -18,14 +18,14 @@ public class KafkaRandomGenerator {
 
     private final static Logger logger = Logger.getLogger(KafkaRandomGenerator.class.getName());
 
-    public static void init(int numMensajes) throws ExecutionException, InterruptedException {
+    public static void init(int numMensajes, String topicName) throws ExecutionException, InterruptedException {
 
         KafkaProducer<String, Empleado> producer = new KafkaProducer<>(getKafkaProps());
         GeneraEmpleadoRandom empleadoRandom = new GeneraEmpleadoRandom();
 
         for (int i = 0; i < numMensajes; i++) {
 
-            Future<RecordMetadata> metadata = enviaEmpleadoTopico("empleado", empleadoRandom.generaEmpleadoRandom(), producer);
+            Future<RecordMetadata> metadata = enviaEmpleadoTopico(topicName, empleadoRandom.generaEmpleadoRandom(), producer);
 
             RecordMetadata m = metadata.get();
 
@@ -43,8 +43,8 @@ public class KafkaRandomGenerator {
         return kafkaProps;
     }
 
-    private static Future<RecordMetadata> enviaEmpleadoTopico(String nombreTopico, Empleado empleado, KafkaProducer<String, Empleado> producer) {
+    private static Future<RecordMetadata> enviaEmpleadoTopico(String topicName, Empleado empleado, KafkaProducer<String, Empleado> producer) {
 
-        return producer.send(new ProducerRecord(nombreTopico, "key", empleado));
+        return producer.send(new ProducerRecord(topicName, "key", empleado));
     }
 }

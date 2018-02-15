@@ -9,7 +9,7 @@ public class EmpleadoMapper implements KeyValueMapper<String, Empleado, KeyValue
     @Override
     public KeyValue<String, Empleado> apply(String s, Empleado empleado) {
         Empleado empleadoNuevo = new Empleado(empleado.getDni(), empleado.getNombre(),
-                empleado.getEmail(), empleado.getApellidos(),
+                empleado.getApellidos(), empleado.getEmail(),
                 empleado.getTelefono(), empleado.getSkills());
 
         if (empleado.getSkills().size() > 2)

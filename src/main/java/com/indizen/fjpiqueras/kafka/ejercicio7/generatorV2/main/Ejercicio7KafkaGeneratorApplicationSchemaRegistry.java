@@ -1,9 +1,6 @@
-package com.indizen.fjpiqueras.kafka;
+package com.indizen.fjpiqueras.kafka.ejercicio7.generatorV2.main;
 
-import com.indizen.fjpiqueras.kafka.ejercicio3.generator.KafkaRandomGenerator;
 import com.indizen.fjpiqueras.kafka.ejercicio7.generatorV2.KafkaRandomGeneratorSchemaRegistry;
-
-import java.util.logging.Logger;
 
 public class Ejercicio7KafkaGeneratorApplicationSchemaRegistry {
 

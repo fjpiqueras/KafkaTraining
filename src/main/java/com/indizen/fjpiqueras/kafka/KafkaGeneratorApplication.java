@@ -8,10 +8,10 @@ public class KafkaGeneratorApplication {
 
     public static void main(String[] args) throws Exception {
 
-        if (args.length == 1) {
-            KafkaRandomGenerator.init(Integer.parseInt(args[0]));
+        if (args.length == 2) {
+            KafkaRandomGenerator.init(Integer.parseInt(args[0]), args[1]);
         } else {
-            throw new Exception("La applicación recibe un argumento: número de mensajes que envía al tópico");
+            throw new Exception("La applicación recibe 2 argumento: <mensajes> <nombreTopic>");
         }
     }
 }
