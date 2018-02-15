@@ -19,8 +19,8 @@ public class GeneraEmpleadoRandom {
 
     public GenericRecord generaEmpleadoRandomAvro() {
 
-        Schema dealMessageSchema = SchemaFactory.getSchemaRegistrySchema("http://127.0.0.1:8081","empleadoSchemaRegistry-value");
-        GenericRecord empleado = new GenericData.Record(dealMessageSchema);
+        Schema empleadoSchema = SchemaFactory.getSchemaRegistrySchema("http://127.0.0.1:8081","empleadoSchemaRegistry-value");
+        GenericRecord empleado = new GenericData.Record(empleadoSchema);
 
         empleado.put("dni", String.valueOf(new Random().nextInt()));
         empleado.put("nombre", getNombreRandom());

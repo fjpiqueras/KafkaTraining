@@ -20,10 +20,10 @@ public class KStreamsJob {
 
         KStreamBuilder builder = new KStreamBuilder();
 
-        KStream<String, Empleado> dealMessageStream = builder.stream(new Serdes.StringSerde(),
+        KStream<String, Empleado> empleadoStream = builder.stream(new Serdes.StringSerde(),
                 getSerdeEmpleado(), topicName).filter(new FilterPredicate()).map(new EmpleadoMapper());
 
-        dealMessageStream.print();
+        empleadoStream.print();
 
         KafkaStreams streams = new KafkaStreams(builder, loadConfig());
         streams.start();

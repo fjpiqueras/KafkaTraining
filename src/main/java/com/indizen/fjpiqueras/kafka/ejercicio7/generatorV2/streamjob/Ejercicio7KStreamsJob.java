@@ -12,6 +12,7 @@ import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.KStream;
 import org.apache.kafka.streams.kstream.KStreamBuilder;
+import org.apache.kafka.streams.kstream.KTable;
 
 import java.util.Collections;
 import java.util.Map;
@@ -22,6 +23,10 @@ public class Ejercicio7KStreamsJob {
     public static void init(String topicName) {
 
         KStreamBuilder builder = new KStreamBuilder();
+
+
+//        KTable<String, GenericRecord>  empleadoKTable  = builder.table(topicName, "tablaEmpleado");
+//        empleadoKTable.print();
 
         KStream<String, GenericRecord> dealMessageStream = builder.stream(new Serdes.StringSerde(),
                 getSerdeEmpleado(), topicName).filter(new FilterPredicateGenericRecord())
