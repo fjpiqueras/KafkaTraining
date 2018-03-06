@@ -42,7 +42,7 @@ public class GeneraEmpleadoRandom {
         empleado.setDni(String.valueOf(new Random().nextInt()));
         empleado.setNombre(getNombreRandom());
         empleado.setApellidos(getApellidoRandom());
-        empleado.setEmail(new Random().nextInt() + "@realmadrid.com");
+        empleado.setEmail(new Random().nextInt() + "@indizen.com");
         empleado.setTelefono(new Random().nextInt());
         empleado.setSkills(getSkill(ThreadLocalRandom.current().nextInt(1, 6)));
 
