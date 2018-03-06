@@ -25,7 +25,7 @@ public class GeneraEmpleadoRandom {
         empleado.put("dni", String.valueOf(new Random().nextInt()));
         empleado.put("nombre", getNombreRandom());
         empleado.put("apellidos", getApellidoRandom());
-        empleado.put("email", new Random().nextInt() + "@realmadrid.com");
+        empleado.put("email", new Random().nextInt() + "@indizen.com");
         empleado.put("telefono", new Random().nextInt());
         empleado.put("skills", getSkill(ThreadLocalRandom.current().nextInt(1, 6)));
         empleado.put("estrella", false);
@@ -54,13 +54,13 @@ public class GeneraEmpleadoRandom {
     private String getNombreRandom() {
         List<String> nombres = new ArrayList<>();
 
-        nombres.add("Ronaldo");
-        nombres.add("Karim");
-        nombres.add("Gareth");
-        nombres.add("Mateo");
-        nombres.add("Toni");
-        nombres.add("Keylor");
-        nombres.add("Sergio");
+        nombres.add("García");
+        nombres.add("Pérez");
+        nombres.add("Ruiz");
+        nombres.add("Piqueras");
+        nombres.add("Fernández");
+        nombres.add("Sánchez");
+        nombres.add("González");
 
         return nombres.get(getRandomInt(nombres));
     }
@@ -72,13 +72,13 @@ public class GeneraEmpleadoRandom {
     private String getApellidoRandom() {
         List<String> nombres = new ArrayList<>();
 
-        nombres.add("Nazario");
-        nombres.add("Benzemal");
-        nombres.add("Bale");
-        nombres.add("Kovacic");
-        nombres.add("Kroos");
-        nombres.add("Navas");
-        nombres.add("Ramos");
+        nombres.add("Jose");
+        nombres.add("Javier");
+        nombres.add("Alberto");
+        nombres.add("Aitor");
+        nombres.add("Paco");
+        nombres.add("Dani");
+        nombres.add("Roberto");
 
         return nombres.get(getRandomInt(nombres));
     }
@@ -86,13 +86,13 @@ public class GeneraEmpleadoRandom {
     private List<String> getSkill(int numSkills) {
         List<String> skills = new ArrayList<>();
 
-        skills.add("Goleador");
-        skills.add("Corte");
-        skills.add("Visión de juego");
-        skills.add("Cono");
-        skills.add("Fotogénico");
-        skills.add("Olfato");
-        skills.add("Técnica");
+        skills.add("Front");
+        skills.add("Back");
+        skills.add("Analytics");
+        skills.add("Blockchain");
+        skills.add("Movilidad");
+        skills.add("Big Data");
+        skills.add("PNL");
 
         List<String> skillsJugador = new ArrayList<>();
 
